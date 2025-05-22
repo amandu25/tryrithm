@@ -1,0 +1,363 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Outlined");
+
+:root {
+  --primary-color: #6d28d9;
+  --primary-light: #8b5cf6;
+  --secondary-color: #10b981;
+  --accent-color: #f59e0b;
+  --text-color: #f8fafc;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  --golden-ratio: 61.8%;
+  --neomorphism-bg: #0f172a;
+  --neomorphism-light: rgba(255, 255, 255, 0.1);
+  --neomorphism-dark: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+  position: relative;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #0f172a;
+}
+
+/* Golden ratio grid layout */
+.bento-grid {
+  display: grid;
+  grid-template-columns: var(--golden-ratio) calc(
+      100% - var(--golden-ratio) - 1.5rem
+    );
+  gap: 1.5rem;
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Create a 3-column layout for the bottom row */
+.col-span-3 {
+  grid-column: 1 / -1;
+}
+
+.golden-left {
+  grid-column: 1;
+}
+
+.golden-right {
+  grid-column: 2;
+}
+
+/* Company Title Styles - With neomorphism effect */
+.company-title {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  min-height: 120px;
+  overflow: hidden;
+  background: var(--neomorphism-bg);
+  border-radius: 1.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.company-title-inner {
+  display: flex;
+  align-items: center;
+  background: var(--neomorphism-bg);
+  padding: 1.5rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 12px 12px 24px var(--neomorphism-dark),
+    -12px -12px 24px var(--neomorphism-light);
+  transition: all 0.3s ease;
+}
+
+.company-title-inner:hover {
+  transform: scale(0.97);
+  box-shadow: 6px 6px 12px var(--neomorphism-dark),
+    -6px -6px 12px var(--neomorphism-light),
+    inset 4px 4px 8px var(--neomorphism-dark),
+    inset -4px -4px 8px var(--neomorphism-light);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: var(--neomorphism-bg);
+  box-shadow: 5px 5px 10px var(--neomorphism-dark),
+    -5px -5px 10px var(--neomorphism-light);
+  transition: all 0.3s ease;
+}
+
+.logo-container:hover {
+  transform: scale(0.95);
+  box-shadow: 3px 3px 6px var(--neomorphism-dark),
+    -3px -3px 6px var(--neomorphism-light),
+    inset 2px 2px 4px var(--neomorphism-dark),
+    inset -2px -2px 4px var(--neomorphism-light);
+}
+
+.logo-icon {
+  font-size: 3rem;
+  color: var(--accent-color);
+  text-shadow: 0 0 15px rgba(245, 158, 11, 0.5);
+  transition: all 0.3s ease;
+}
+
+.logo-container:hover .logo-icon {
+  transform: scale(0.9);
+}
+
+.company-name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 6vw;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--text-color);
+  line-height: 0.9;
+  margin: 0;
+  background: linear-gradient(90deg, var(--primary-light), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.company-title-inner:hover .company-name {
+  transform: scale(0.97);
+  background: linear-gradient(90deg, var(--accent-color), var(--primary-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Glassmorphism effect for all bento items */
+.bento-item {
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 1.5rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  height: 100%;
+}
+
+.bento-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.bento-item h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.bento-item p {
+  font-size: 0.875rem;
+  color: rgba(248, 250, 252, 0.8);
+  line-height: 1.5;
+}
+
+.bento-item .arrow-icon {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background-color: rgba(109, 40, 217, 0.6);
+  color: white;
+  border-radius: 9999px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.bento-item:hover .arrow-icon {
+  background-color: rgba(109, 40, 217, 0.8);
+}
+
+.bento-item.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
+.bento-item.row-span-2 {
+  grid-row: span 2 / span 2;
+}
+
+.bento-item.bg-orange-glass {
+  background-color: rgba(245, 158, 11, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.bento-item.bg-orange-glass:hover {
+  background-color: rgba(245, 158, 11, 0.2);
+}
+
+.bento-item.bg-orange-glass h2 {
+  color: var(--accent-color);
+}
+
+.bento-item.bg-orange-glass p {
+  color: rgba(255, 237, 213, 0.9);
+}
+
+.bento-item.bg-orange-glass .arrow-icon {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--accent-color);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.bento-item.bg-orange-glass:hover .arrow-icon {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.bento-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+.bento-item .image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  margin-top: 1rem;
+}
+
+.text-shadow-sm {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.service-item {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background-color 0.3s ease;
+}
+
+.service-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.service-item h3 {
+  color: var(--secondary-color);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.form-input-glass {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: var(--text-color) !important;
+}
+
+.form-input-glass::placeholder {
+  color: rgba(248, 250, 252, 0.6) !important;
+}
+
+button[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--primary-light);
+}
+
+@media (max-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .golden-left {
+    grid-column: 1;
+  }
+
+  .golden-right {
+    grid-column: 2;
+  }
+
+  .company-name {
+    font-size: 5vw;
+  }
+
+  .logo-icon {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .golden-left,
+  .golden-right,
+  .col-span-3 {
+    grid-column: 1;
+  }
+
+  .bento-item.col-span-2,
+  .bento-item.col-span-3 {
+    grid-column: span 1 / span 1;
+  }
+
+  .bento-item.row-span-2 {
+    grid-row: span 1 / span 1;
+  }
+
+  .bento-item h2 {
+    font-size: 1.5rem;
+  }
+
+  .company-name {
+    font-size: 8vw;
+  }
+
+  .logo-icon {
+    font-size: 3rem;
+  }
+
+  /* Make skills and team sections stack on mobile */
+  .col-span-3.grid.grid-cols-2 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
