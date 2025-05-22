@@ -3,15 +3,15 @@ import React from "react";
 function ContactForm() {
   return (
     <div className="bento-item">
-      <h2 className="text-shadow-sm mb-3 md:mb-4 text-xl md:text-2xl">
+      <h2 className="text-shadow-sm mb-2 md:mb-4 text-lg md:text-2xl">
         Get in Touch
       </h2>
-      <p className="text-xs md:text-sm mb-4 md:mb-6">
+      <p className="text-xs md:text-sm mb-3 md:mb-6">
         Have a project in mind? We'd love to hear about it. Drop us a message
         and we'll get back to you as soon as possible.
       </p>
 
-      <form className="space-y-3 md:space-y-4">
+      <form className="space-y-2 md:space-y-4">
         <div>
           <input
             type="text"
@@ -29,7 +29,7 @@ function ContactForm() {
         <div>
           <textarea
             placeholder="Your Message"
-            rows="3"
+            rows="2"
             className="w-full p-2 md:p-3 bg-black/30 border border-white/10 rounded-lg text-white text-xs md:text-sm focus:outline-none focus:border-purple-500"
           ></textarea>
         </div>

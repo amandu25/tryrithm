@@ -120,10 +120,8 @@ function ProjectsCarousel() {
   };
 
   return (
-    <div className="bento-item col-span-3 py-4 md:py-6 overflow-hidden">
-      <h2 className="text-shadow-sm mb-4 md:mb-6 text-xl md:text-2xl">
-        Our Projects
-      </h2>
+    <div className="bento-item col-span-3 py-3 md:py-6 overflow-hidden">
+      <h2 className="text-shadow-sm mb-3 md:mb-6">Our Projects</h2>
 
       <div
         className="relative"
@@ -132,7 +130,7 @@ function ProjectsCarousel() {
       >
         <div
           ref={carouselRef}
-          className="flex overflow-x-scroll no-scrollbar py-3 md:py-4 space-x-4 md:space-x-6"
+          className="flex overflow-x-scroll no-scrollbar py-2 md:py-4 space-x-3 md:space-x-6"
           style={{ scrollBehavior: isTouching ? "auto" : "smooth" }}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
@@ -141,9 +139,9 @@ function ProjectsCarousel() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="flex-none w-[80vw] sm:w-80 md:w-72 glassmorphism-card transition-transform duration-300 transform hover:scale-105"
+              className="flex-none w-[70vw] sm:w-[60vw] md:w-72 glassmorphism-card transition-transform duration-300 transform hover:scale-105"
             >
-              <div className="h-36 sm:h-40 md:h-44 w-full overflow-hidden rounded-t-xl">
+              <div className="h-32 sm:h-36 md:h-44 w-full overflow-hidden rounded-t-lg">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -151,18 +149,18 @@ function ProjectsCarousel() {
                   loading="lazy"
                 />
               </div>
-              <div className="p-3 sm:p-4 md:p-5">
-                <h3 className="text-base md:text-lg font-semibold text-white mb-1 md:mb-2">
+              <div className="p-2 sm:p-3 md:p-5">
+                <h3 className="font-semibold text-white mb-1 md:mb-2 text-base sm:text-lg md:text-xl">
                   {project.title}
                 </h3>
-                <p className="text-gray-300 text-xs sm:text-sm mb-2 md:mb-4 line-clamp-3">
+                <p className="text-xs sm:text-sm text-gray-300 mb-2 md:mb-4 line-clamp-2 md:line-clamp-3 font-['Open_Sans']">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-1 md:gap-2">
                   {project.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="px-1.5 py-0.5 md:px-2 md:py-1 text-xs rounded-full bg-purple-900 bg-opacity-50 text-purple-100"
+                      className="px-1 py-0.5 md:px-2 md:py-1 text-xs rounded-full bg-purple-900 bg-opacity-50 text-purple-100 font-['Open_Sans']"
                     >
                       {tag}
                     </span>
@@ -191,6 +189,13 @@ function ProjectsCarousel() {
 
         .no-scrollbar::-webkit-scrollbar {
           display: none; /* Chrome, Safari, Opera */
+        }
+
+        .line-clamp-2 {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
 
         .line-clamp-3 {

@@ -11,9 +11,9 @@ import cssSvg from "../assets/skills/css-3-svgrepo-com.svg";
 import jsSvg from "../assets/skills/js-svgrepo-com.svg";
 import reduxSvg from "../assets/skills/redux-svgrepo-com.svg";
 import seoSvg from "../assets/skills/seo-1-svgrepo-com.svg";
-import writingSvg from "../assets/skills/writing-svgrepo-com.svg";
 
 function SkillsSection() {
+  // For mobile view, limit the number of skills to show
   const skills = [
     { name: "HTML5", svg: htmlSvg },
     { name: "CSS3", svg: cssSvg },
@@ -27,13 +27,12 @@ function SkillsSection() {
     { name: "Git", svg: gitSvg },
     { name: "Figma", svg: figmaSvg },
     { name: "SEO", svg: seoSvg },
-    { name: "Technical Writing", svg: writingSvg },
   ];
 
   return (
-    <div className="h-auto min-h-[300px] md:h-[400px] flex items-center justify-center w-full py-4 md:py-0">
+    <div className="h-auto min-h-[220px] sm:min-h-[280px] md:min-h-[320px] flex items-center justify-center w-full py-2 sm:py-4 md:py-6">
       {/* <h2 className="text-3xl font-bold text-center mb-8">My Skills</h2> */}
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3 sm:gap-4 md:gap-6 place-items-center w-full">
+      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-1 sm:gap-2 md:gap-4 place-items-center w-full">
         {skills.map((skill, index) => (
           <div
             key={index}
@@ -43,9 +42,12 @@ function SkillsSection() {
               src={skill.svg}
               alt={skill.name}
               title={skill.name}
-              className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 object-contain hover:opacity-80"
+              className="w-6 h-6 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 object-contain hover:opacity-80"
+              loading="lazy"
             />
-            {/* <span className="mt-2 text-sm text-center">{skill.name}</span> */}
+            <span className="mt-1 md:mt-2 text-xs sm:text-sm text-center font-['Open_Sans'] text-gray-300">
+              {skill.name}
+            </span>
           </div>
         ))}
       </div>
