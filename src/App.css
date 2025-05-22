@@ -803,3 +803,34 @@ textarea,
 select {
   font-family: "Open Sans", sans-serif;
 }
+
+/* Team member text override */
+.flex-col.items-center.group h3 {
+  font-size: 11px !important;
+  line-height: 1.3 !important;
+}
+
+.flex-col.items-center.group p {
+  font-size: 9px !important;
+  line-height: 1.3 !important;
+}
+
+@media (min-width: 640px) {
+  .flex-col.items-center.group h3 {
+    font-size: 12px !important;
+  }
+
+  .flex-col.items-center.group p {
+    font-size: 10px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .flex-col.items-center.group h3 {
+    font-size: 14px !important;
+  }
+
+  .flex-col.items-center.group p {
+    font-size: 12px !important;
+  }
+}
