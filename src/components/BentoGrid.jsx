@@ -4,12 +4,13 @@ import ServicesSection from "./ServicesSection";
 import TabsNavigation from "./TabsNavigation";
 import TabContent from "./TabContent";
 import ContactForm from "./ContactForm";
+import ProjectsCarousel from "./ProjectsCarousel";
 
 function BentoGrid() {
   const [activeTab, setActiveTab] = useState("skills");
 
   return (
-    <div className="bento-grid pt-8">
+    <div className="bento-grid pt-4 sm:pt-6 md:pt-8">
       {/* Company Name - Left Side (61.8% width) with Neomorphism effect */}
       <div className="company-title golden-left row-span-1">
         <div className="company-title-inner">
@@ -30,10 +31,15 @@ function BentoGrid() {
         <ServicesSection />
       </div>
 
-      {/* Left side section with tabs and content */}
-      <div className="col-span-3 grid grid-cols-2 gap-6 mt-6">
+      {/* Projects Carousel - Same width as Services Section */}
+      <div className="col-span-3 row-span-1">
+        <ProjectsCarousel />
+      </div>
+
+      {/* Tabs and Contact section - responsive grid for different screen sizes */}
+      <div className="col-span-3 grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6 mt-3 sm:mt-4 md:mt-6">
         {/* Left side: Tabs navigation + Tab content stacked vertically */}
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-3 sm:space-y-4 mb-3 sm:mb-4 md:mb-0">
           {/* Tabs navigation bar */}
           <TabsNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
 

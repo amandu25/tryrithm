@@ -30,20 +30,24 @@ function ServicesSection() {
 
   return (
     <div className="bento-item col-span-3">
-      <h2 className="text-shadow-sm mb-6">Our Services</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <h2 className="text-shadow-sm mb-4 md:mb-6 text-xl md:text-2xl">
+        Our Services
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         {services.map((service, index) => (
-          <div key={index} className="flex items-start space-x-4">
-            <div className="w-12 h-12 rounded-lg bg-purple-700 bg-opacity-20 flex items-center justify-center backdrop-blur-sm">
-              <span className="material-icons-outlined text-white">
+          <div key={index} className="flex items-start space-x-3 md:space-x-4">
+            <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-lg bg-purple-700 bg-opacity-20 flex items-center justify-center backdrop-blur-sm">
+              <span className="material-icons-outlined text-white text-base md:text-lg">
                 {service.icon}
               </span>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-white mb-1">
+              <h3 className="text-base sm:text-lg font-semibold text-white mb-0.5 md:mb-1">
                 {service.title}
               </h3>
-              <p className="text-sm text-gray-300">{service.description}</p>
+              <p className="text-xs sm:text-sm text-gray-300">
+                {service.description}
+              </p>
             </div>
           </div>
         ))}

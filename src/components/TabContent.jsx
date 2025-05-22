@@ -4,9 +4,11 @@ import TeamSection from "./TeamSection";
 
 function TabContent({ activeTab }) {
   return (
-    <div className="bento-item">
-      {activeTab === "skills" && <SkillsSection />}
-      {activeTab === "team" && <TeamSection />}
+    <div className="bento-item tab-content-container overflow-hidden">
+      <div className="h-full">
+        {activeTab === "skills" && <SkillsSection />}
+        {activeTab === "team" && <TeamSection />}
+      </div>
     </div>
   );
 }

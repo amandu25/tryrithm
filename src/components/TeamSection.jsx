@@ -5,47 +5,41 @@ function TeamSection() {
     {
       name: "Alex Johnson",
       role: "Lead Developer",
-      icon: "code",
+      image: "https://randomuser.me/api/portraits/men/32.jpg",
     },
     {
       name: "Sarah Miller",
       role: "UI/UX Designer",
-      icon: "palette",
+      image: "https://randomuser.me/api/portraits/women/44.jpg",
     },
     {
       name: "David Chen",
       role: "Project Manager",
-      icon: "assignment",
-    },
-    {
-      name: "Maya Rodriguez",
-      role: "Backend Engineer",
-      icon: "storage",
+      image: "https://randomuser.me/api/portraits/men/57.jpg",
     },
   ];
 
   return (
-    <div className="space-y-4">
-      {team.map((member, index) => (
-        <div
-          key={index}
-          className="flex bg-black/30 border border-white/10 p-4 rounded-lg backdrop-blur-lg"
-        >
-          <div className="p-3">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 rounded-full bg-purple-700 bg-opacity-20 flex items-center justify-center backdrop-blur-sm">
-                <span className="material-icons-outlined text-white">
-                  {member.icon}
-                </span>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white">{member.name}</h3>
-                <p className="text-sm text-gray-300 mt-1">{member.role}</p>
-              </div>
+    <div className="h-auto min-h-[300px] md:h-[400px] flex items-center justify-center w-full py-4 md:py-0">
+      <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 w-full">
+        {team.map((member, index) => (
+          <div key={index} className="flex flex-col items-center">
+            <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden border-2 border-purple-500 mb-3 md:mb-4 hover:scale-105 transition-transform">
+              <img
+                src={member.image}
+                alt={member.name}
+                className="w-full h-full object-cover"
+              />
             </div>
+            <h3 className="text-base sm:text-lg font-semibold text-white text-center">
+              {member.name}
+            </h3>
+            <p className="text-xs sm:text-sm text-gray-300 text-center">
+              {member.role}
+            </p>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
